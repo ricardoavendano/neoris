@@ -7,10 +7,10 @@ Para ejecutar el proyecto se deben realizar los siguientes pasos
 3. Ir al directorio donde se encuentra el fuente y dirigirse a la carpeta target; por linea de comandos ejecutar jar: java -jar NeorisMS-0.0.1-SNAPSHOT.jar
 4. La aplicacion ya se encuentra desplegada localmente en la url (http://localhost:8080)
 5. Ingreso a la BD H2
-   url: http://localhost:8080/api/h2-console/login.jsp
-   JDBC URL: jdbc:h2:mem:neoris
-   User name: neoris
-   Password: neoris
+   - url: http://localhost:8080/api/h2-console/login.jsp
+   - JDBC URL: jdbc:h2:mem:neoris
+   - User name: neoris
+   - Password: neoris
 
    Tablas: BRAND, PRICES
 6. Ejecución Sonar y pruebas unitarias
