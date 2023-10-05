@@ -17,8 +17,7 @@ Para ejecutar el proyecto se deben realizar los siguientes pasos
 
    - Jacoco: al ejecutar mvn clean instal se crea la siguiente ruta donde se puede consultar el reporte de jacoco: ../target/site/jacoco/index.html
    - Sonar: en el proyecto esta el file sonar-project.properties, para ejecutarlo se recomienda tener la imagen de sonarqube en Docker, se ejecuta con el siguiente comando: sonar-scanner -Dproject.settings=sonar-project.properties
-
-Tablas: BRAND, PRICES
+   
 7. Uso de Swagger y pruebas
    http://localhost:8080/api/swagger-ui.html#/
 
