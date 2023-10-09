@@ -1,7 +1,7 @@
 package com.neoris.neorisms.infrastructure.rest.controller;
 
 import com.neoris.neorisms.application.service.PriceService;
-import java.util.Date;
+import com.neoris.neorisms.domain.model.ResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -11,25 +11,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("/price")
 @Slf4j
 public class PriceController {
 
-  private final PriceService priceService;
+    private final PriceService priceService;
 
-  public PriceController(PriceService priceService) {
-    this.priceService = priceService;
-  }
+    public PriceController(PriceService priceService) {
+        this.priceService = priceService;
+    }
 
-  @GetMapping
-  public ResponseEntity<?> checkPrices(
-      @RequestParam("applicationDate") @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss")
-          Date applicationDate,
-      @RequestParam("productId") Long productId,
-      @RequestParam("brandId") Long brandId) {
+    @GetMapping
+    public ResponseEntity<ResponseDTO> checkPrices(
+            @RequestParam("applicationDate") @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss")
+                    Date applicationDate,
+            @RequestParam("productId") Long productId,
+            @RequestParam("brandId") Long brandId) {
 
-    return new ResponseEntity<>(
-        this.priceService.findPrices(applicationDate, productId, brandId), HttpStatus.OK);
-  }
+        return new ResponseEntity<>(
+                this.priceService.findPrices(applicationDate, productId, brandId), HttpStatus.OK);
+    }
 }
